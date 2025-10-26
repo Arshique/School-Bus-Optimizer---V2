@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block body %}
+
+<header class="navbar">
+  <div class="nav-left">
+    <div class="logo">
+      <a href="/">
+        <img src="{{url_for('static' , filename='images/Logo.png')}}" alt="" />
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="auth-buttons">
+    <label for="switch" class="switch">
+      <input id="switch" type="checkbox" />
+      <span class="slider"></span>
+      <span class="decoration"></span>
+    </label>
+    <a href="login.html" class="btn btn-login">Login</a>
+    <!-- <a href="signup.html" class="btn btn-signup">Sign Up</a> -->
+  </div>
+</header>
+
+<script src="{{url_for('static', filename='Js/script.js')}}"></script>
+
+{% endblock body %}
