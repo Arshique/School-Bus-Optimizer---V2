@@ -1,30 +1,41 @@
 {% extends 'base.html' %} {% block body %}
 
-<header class="navbar">
-  <div class="nav-left">
+<nav class="navbar">
+  <div class="container">
     <div class="logo">
-      <a href="/">
-        <img src="{{url_for('static' , filename='images/Logo.png')}}" alt="" />
+      <a class="navbar-brand" href="/">
+        <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="Logo" />
       </a>
     </div>
-    <nav class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#about">About Us</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="links">
+      <ul>
+        <li><a href="/">Features</a></li>
+        <li><a href="/about">Pricing</a></li>
+        <li><a href="/services">Testimonials</a></li>
+        <li><a href="/contact">Contacts</a></li>
+      </ul>
+    </div>
+    <div class="nav-actions">
+      <button class ="theme-btn">
+        <img src="{{ url_for('static', filename='images/theme-icon.png') }}" alt="theme-icon" />
+      </button>
+      <button class="btn cyan">Log in</button>
+      <button class="btn blue">Free trial</button>
+    </div>
   </div>
-  <div class="auth-buttons">
-    <label for="switch" class="switch">
-      <input id="switch" type="checkbox" />
-      <span class="slider"></span>
-      <span class="decoration"></span>
-    </label>
-    <a href="login.html" class="btn btn-login">Login</a>
-    <!-- <a href="signup.html" class="btn btn-signup">Sign Up</a> -->
-  </div>
-</header>
+</nav>
 
-<script src="{{url_for('static', filename='Js/script.js')}}"></script>
+<!-- Hero - section -->
+<div class="hero">
+  <div class="left">
+    <h1>Seamless Maagement, Powerful Features</h1>
+    
+  </div>
+  <div class="right">
+    <img src="{{url_for('static', filename='images/hero-img1.png')}}" alt="">
+  </div>
+</div>
+
+<!-- <script src="{{url_for('static', filename='Js/script.js')}}"></script> -->
 
 {% endblock body %}
