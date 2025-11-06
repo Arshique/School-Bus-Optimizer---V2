@@ -1,4 +1,10 @@
-{% extends 'base.html' %} {% block body %}
+{% extends 'base.html' %}
+
+{% block head %}
+  
+{% endblock head %}
+
+{% block body %}
 
 <nav class="navbar">
   <div class="container">
@@ -25,30 +31,13 @@
   </div>
 </nav>
 
-<!-- Hero - section -->
-<!-- <div class="hero">
-  <div class="left">
-    <h1>Seamless Maagement, Powerful Features</h1>
-    <div class="left-content">
-
-    </div>
-    <div class="right-content">
-      
-    </div>
-  </div>
-  <div class="right">
-    <img src="{{url_for('static', filename='images/hero-img1.png')}}" alt="">
-  </div>
-</div> -->
-
+<!---------------------- Hero section ------------------>
 
 <section class="hero">
-    <div class="hero-image">
-      <img src="{{url_for('static', filename='images/hero-img1.png')}}" alt="Bus Illustration">
-    </div>
-    
+  <div class="hero-inner">
     <div class="hero-content">
       <h1>Seamless Management, Powerful Features</h1>
+
       <div class="features">
         <div class="feature-card">
           <div class="icon">🧠</div>
@@ -66,11 +55,16 @@
           </div>
         </div>
       </div>
-      <div class="cta-wrapper">
-        <button class="cta-btn">Get Started Today</button>
-      </div>
+
+      <button class="cta-btn">Get Started Today</button>
     </div>
-  </section>
+
+    <div class="hero-image">
+      <img src="{{url_for('static', filename='images/hero-img1.png')}}" alt="Bus Illustration">
+    </div>
+  </div>
+</section>
+
 
 <!-- <script src="{{url_for('static', filename='Js/script.js')}}"></script> -->
 

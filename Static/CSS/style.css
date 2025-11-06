@@ -194,75 +194,105 @@ body {
 /* End navbar */
 
 
-/* Hero section: two-column layout (left content, right image) */
-.hero-display {
+/* --- HERO SECTION --- */
+.hero {
+  background: var(--bg-dark);
+  padding: 6rem 8%;
   display: flex;
-  /* align-items: center; */
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-inner {
+  display: flex;
   justify-content: space-between;
-  padding: 4rem 5%;
-  gap: 2rem;
-  min-height: calc(100vh - 80px);
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1250px;
 }
 
 .hero-content {
-  flex: 1 1 50%;
-  max-width: 50%;
-  padding-right: 2rem;
+  flex: 0 0 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .hero h1 {
   color: var(--text);
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 800;
-  /* margin-top: 5rem; */
+  line-height: 1.2;
+  letter-spacing: -0.5px;
   margin-bottom: 1rem;
-  padding: 4rem 5%;
-  line-height: 1.05;
-  white-space: wrap;        /* keep on a single line */
-  overflow: hidden;
-  text-overflow: ellipsis;   /* if too long, show ellipsis */
 }
 
-.hero-content p {
-  color: var(--text-muted);
-  font-size: 1.05rem;
-  margin-bottom: 1.25rem;
-}
-
+/* Feature Cards Section */
 .features {
   display: flex;
-  gap: 1.25rem;
-  flex-wrap: wrap;
-  margin-bottom: 1.25rem;
-  justify-content: center; /* center the group of cards */
+  gap: 2rem;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
 }
 
 .feature-card {
-  background: rgba(0,0,0,0.06);
-  padding: 1.15rem;         /* larger padding */
-  border-radius: 12px;
-  width: 460px;             /* slightly larger card */
+  flex: 1 1 50%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.8rem;
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  transition: transform 0.18s ease, background 0.18s ease;
+  gap: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .feature-card:hover {
   transform: translateY(-6px);
-  background: rgba(0,0,0,0.09);
+  background: oklch(0.18 0.025 245);
 }
 
-.icon { font-size: 1.4rem; }
-.text h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); }
-.text p { color: var(--text-muted); font-size: 0.97rem; }
+.icon {
+  font-size: 1.8rem;
+}
 
-.cta-btn { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; border: none; border-radius: 10px; padding: 12px 24px; font-weight: 700; cursor: pointer; display: block; margin: 1.25rem auto 0; }
-.cta-btn:hover { opacity: 0.95; }
+.text h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
 
+.text p {
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+
+/* CTA Button */
+.cta-btn {
+  background: var(--primary);
+  color: var(--bg-light);
+  font-weight: 700;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 30px;
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 14px rgba(80,120,200,0.12);
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+/* Hero Image */
 .hero-image {
-  flex: 1 1 30%;
-  max-width: 30%;
+  flex: 0 0 40%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -270,18 +300,38 @@ body {
 
 .hero-image img {
   width: 100%;
-  max-width: 700px;
+  max-width: 480px;
   height: auto;
+  border-radius: 16px;
   object-fit: contain;
-  border-radius: 12px;
 }
 
-/* Responsive: stack on smaller screens */
+/* Responsive adjustments */
 @media (max-width: 900px) {
-  .hero { flex-direction: column-reverse; padding: 2.5rem 4%; min-height: auto; }
-  .hero-content, .hero-image { max-width: 100%; width: 100%; padding-right: 0; }
-  .hero-image { margin-bottom: 1.5rem; }
-  .feature-card { width: 100%; }
-  /* allow heading to wrap on small screens to avoid truncation */
-  .hero-content h1 { white-space: normal; text-overflow: clip; }
+  .hero-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-content {
+    flex: 1 1 100%;
+    align-items: center;
+  }
+
+  .features {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .feature-card {
+    width: 90%;
+  }
+
+  .cta-btn {
+    align-self: center;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
 }
