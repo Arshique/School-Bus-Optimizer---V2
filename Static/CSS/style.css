@@ -194,12 +194,94 @@ body {
 /* End navbar */
 
 
-/* Hero - sction */
-.hero {
-    width: 100%;
-    height: calc(100vh - 80px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(160deg, oklch(0.12 0.025 245), oklch(0.18 0.025 245));
+/* Hero section: two-column layout (left content, right image) */
+.hero-display {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  padding: 4rem 5%;
+  gap: 2rem;
+  min-height: calc(100vh - 80px);
+}
+
+.hero-content {
+  flex: 1 1 50%;
+  max-width: 50%;
+  padding-right: 2rem;
+}
+
+.hero h1 {
+  color: var(--text);
+  font-size: 2.5rem;
+  font-weight: 800;
+  /* margin-top: 5rem; */
+  margin-bottom: 1rem;
+  padding: 4rem 5%;
+  line-height: 1.05;
+  white-space: wrap;        /* keep on a single line */
+  overflow: hidden;
+  text-overflow: ellipsis;   /* if too long, show ellipsis */
+}
+
+.hero-content p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+.features {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  justify-content: center; /* center the group of cards */
+}
+
+.feature-card {
+  background: rgba(0,0,0,0.06);
+  padding: 1.15rem;         /* larger padding */
+  border-radius: 12px;
+  width: 460px;             /* slightly larger card */
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  background: rgba(0,0,0,0.09);
+}
+
+.icon { font-size: 1.4rem; }
+.text h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); }
+.text p { color: var(--text-muted); font-size: 0.97rem; }
+
+.cta-btn { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; border: none; border-radius: 10px; padding: 12px 24px; font-weight: 700; cursor: pointer; display: block; margin: 1.25rem auto 0; }
+.cta-btn:hover { opacity: 0.95; }
+
+.hero-image {
+  flex: 1 1 30%;
+  max-width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 900px) {
+  .hero { flex-direction: column-reverse; padding: 2.5rem 4%; min-height: auto; }
+  .hero-content, .hero-image { max-width: 100%; width: 100%; padding-right: 0; }
+  .hero-image { margin-bottom: 1.5rem; }
+  .feature-card { width: 100%; }
+  /* allow heading to wrap on small screens to avoid truncation */
+  .hero-content h1 { white-space: normal; text-overflow: clip; }
 }

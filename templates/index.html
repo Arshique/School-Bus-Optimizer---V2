@@ -26,15 +26,51 @@
 </nav>
 
 <!-- Hero - section -->
-<div class="hero">
+<!-- <div class="hero">
   <div class="left">
     <h1>Seamless Maagement, Powerful Features</h1>
-    
+    <div class="left-content">
+
+    </div>
+    <div class="right-content">
+      
+    </div>
   </div>
   <div class="right">
     <img src="{{url_for('static', filename='images/hero-img1.png')}}" alt="">
   </div>
-</div>
+</div> -->
+
+
+<section class="hero">
+    <div class="hero-image">
+      <img src="{{url_for('static', filename='images/hero-img1.png')}}" alt="Bus Illustration">
+    </div>
+    
+    <div class="hero-content">
+      <h1>Seamless Management, Powerful Features</h1>
+      <div class="features">
+        <div class="feature-card">
+          <div class="icon">🧠</div>
+          <div class="text">
+            <h3>Intelligent Route Planning</h3>
+            <p>Algorithmic optimizations for efficiency. Fuel costs ↓ & cost savings ↑.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon">📍</div>
+          <div class="text">
+            <h3>Real-time Student Tracking</h3>
+            <p>Monitor pickup & drop-off times to ensure student safety.</p>
+          </div>
+        </div>
+      </div>
+      <div class="cta-wrapper">
+        <button class="cta-btn">Get Started Today</button>
+      </div>
+    </div>
+  </section>
 
 <!-- <script src="{{url_for('static', filename='Js/script.js')}}"></script> -->
 
